@@ -42,4 +42,4 @@ def send_message(chat_id, text, buttons=None):
     requests.post(f'{BASE_URL}/sendMessage', json=payload)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=10000)
