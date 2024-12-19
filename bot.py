@@ -15,7 +15,7 @@ if BOT_TOKEN is None:
 BASE_URL = f'https://api.telegram.org/bot{BOT_TOKEN}'
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 
-bot = #Initialize your bot here
+bot = 8105328463:AAEpq_gJIAalaq0UVQrsvXlARBrlQhxyqJ0
 
 try:
     r = requests.get(f'{BASE_URL}/setWebhook?url={WEBHOOK_URL}')
