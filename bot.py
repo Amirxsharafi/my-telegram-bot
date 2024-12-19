@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request
 import requests
 
@@ -6,9 +7,12 @@ app = Flask(__name__)
 
 # Bot token from environment variable
 BOT_TOKEN = os.environ.get("8105328463:AAEpq_gJIAalaq0UVQrsvXlARBrlQhxyqJ0")
+if BOT_TOKEN is None:
+    print("Error: BOT_TOKEN environment variable not set!")
+    exit(1)
 
 # Telegram API URL (base without specific endpoint)
-BASE_URL = f'https://api.telegram.org/bot'
+BASE_URL = f'https://api.telegram.org/bot{BOT_TOKEN}'
 
 # Handle incoming webhook messages
 @app.route('/', methods=['POST'])
