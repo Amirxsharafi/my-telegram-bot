@@ -13,6 +13,16 @@ if BOT_TOKEN is None:
 
 # Telegram API URL (base without specific endpoint)
 BASE_URL = f'https://api.telegram.org/bot{BOT_TOKEN}'
+WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
+
+bot = #Initialize your bot here
+
+try:
+    r = requests.get(f'{BASE_URL}/setWebhook?url={WEBHOOK_URL}')
+    print(r.text) #Print result of setWebhook
+    print("Webhook set successfully")
+except requests.exceptions.RequestException as e:
+    print(f"Error setting webhook: {e}")
 
 # Handle incoming webhook messages
 @app.route('/', methods=['POST'])
